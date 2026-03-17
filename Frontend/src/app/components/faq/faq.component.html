@@ -1,0 +1,18 @@
+<section class="faq-section" id="faq">
+  <div class="faq-header">
+    <span class="section-label">FAQ</span>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-sub">Everything you need to know before getting started.</p>
+  </div>
+  <div class="faq-grid">
+    @for (item of faqItems; track item.q; let i = $index) {
+      <div class="faq-item">
+        <button class="faq-question" [class.open]="openIndex === i" (click)="toggle(i)">
+          {{ item.q }}
+          <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </button>
+        <div class="faq-answer" [class.open]="openIndex === i"><p>{{ item.a }}</p></div>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,28 @@
+<nav id="navbar">
+  <div class="nav-logo">
+    <a routerLink="/" (click)="closeMenu()">
+      <div class="nav-logo-mark"><span>SA</span></div>
+      <span class="nav-brand">OutsourceSA</span>
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Home</a></li>
+    <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a></li>
+    <li><a routerLink="/services" routerLinkActive="active" (click)="closeMenu()">Services</a></li>
+    <li><a routerLink="/pricing" routerLinkActive="active" (click)="closeMenu()">Pricing</a></li>
+    <li><a routerLink="/faq" routerLinkActive="active" (click)="closeMenu()">FAQ</a></li>
+    <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
+  </ul>
+  <a routerLink="/contact" class="btn-primary-nav" (click)="closeMenu()">Get in Touch</a>
+  <div class="nav-hamburger" (click)="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" [class.open]="mobileOpen">
+  <a routerLink="/" (click)="closeMenu()">Home</a>
+  <a routerLink="/about" (click)="closeMenu()">About</a>
+  <a routerLink="/services" (click)="closeMenu()">Services</a>
+  <a routerLink="/pricing" (click)="closeMenu()">Pricing</a>
+  <a routerLink="/faq" (click)="closeMenu()">FAQ</a>
+  <a routerLink="/contact" (click)="closeMenu()">Contact</a>
+</div>

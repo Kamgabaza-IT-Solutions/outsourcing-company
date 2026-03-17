@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>OutsourceSA — Hire World-Class South African Talent</title>
+<meta name="description" content="Access highly skilled English-speaking professionals at up to 70% lower cost than U.S. hiring. Build your remote team in South Africa today."/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0A2342;
+  --navy-light:#0f2f5a;
+  --gold:#F4A823;
+  --gold-light:#f7bc55;
+  --slate:#4A5568;
+  --bg:#F7F8FA;
+  --white:#FFFFFF;
+  --text:#1A202C;
+  --muted:#718096;
+  --green:#2D9C5B;
+  --border:#E2E8F0;
+  --red:#E53E3E;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* ── NAVBAR ── */
+nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 5%;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:68px}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-mark{width:34px;height:34px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.nav-logo-mark span{color:var(--gold);font-family:'Playfair Display',serif;font-weight:800;font-size:16px}
+.nav-brand{font-family:'Playfair Display',serif;font-weight:700;font-size:17px;color:var(--navy)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:14px;font-weight:500;color:var(--slate);transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--navy)}
+.nav-links a.active{border-bottom:2px solid var(--gold);padding-bottom:2px}
+.btn-primary-nav{padding:9px 22px;border:none;border-radius:6px;font-size:13px;font-weight:600;color:var(--navy);background:var(--gold);cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+.btn-primary-nav:hover{background:var(--gold-light)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all 0.3s}
+.mobile-menu{display:none;flex-direction:column;background:var(--white);padding:20px 5%;border-bottom:1px solid var(--border);gap:16px}
+.mobile-menu a{font-size:15px;font-weight:500;color:var(--slate)}
+.mobile-menu.open{display:flex}
+
+/* ── HERO ── */
+.hero{background:var(--navy);min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:80px 5%}
+.hero-accent-bar{position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+#particle-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.hero-content{position:relative;z-index:2;max-width:660px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(244,168,35,0.15);border:1px solid rgba(244,168,35,0.3);border-radius:20px;padding:6px 16px;margin-bottom:28px}
+.hero-badge-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero-badge span{color:var(--gold);font-size:13px;font-weight:500}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:800;color:var(--white);line-height:1.12;margin-bottom:22px;letter-spacing:-0.5px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p{font-size:17px;color:rgba(255,255,255,0.7);line-height:1.7;max-width:500px;margin-bottom:36px;font-weight:300}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+.hero-btn-main{padding:14px 32px;background:var(--gold);border:none;border-radius:6px;font-size:15px;font-weight:600;color:var(--navy);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s}
+.hero-btn-main:hover{background:var(--gold-light);transform:translateY(-1px)}
+.hero-btn-ghost{padding:14px 32px;background:transparent;border:1.5px solid rgba(255,255,255,0.3);border-radius:6px;font-size:15px;font-weight:500;color:var(--white);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s}
+.hero-btn-ghost:hover{border-color:rgba(255,255,255,0.7)}
+.hero-stats{display:flex;gap:44px;flex-wrap:wrap}
+.stat-item{border-left:2px solid var(--gold);padding-left:16px}
+.stat-num{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--white)}
+.stat-label{font-size:12px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.5px;margin-top:2px}
+.hero-visual{position:absolute;right:5%;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;z-index:3}
+.hero-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:16px 20px;width:230px}
+.hero-card-label{font-size:11px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px}
+.hero-card-value{font-size:22px;font-weight:600;color:var(--white)}
+.hero-card-sub{font-size:12px;color:var(--green);margin-top:3px;font-weight:500}
+.hero-card-sub.gold{color:var(--gold)}
+
+/* ── LOGOS ── */
+.logos-strip{background:var(--white);padding:22px 5%;border-bottom:1px solid var(--border)}
+.logos-inner{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.logos-label{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap;margin-right:8px}
+.logo-pill{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:7px 18px;font-size:13px;font-weight:600;color:var(--slate)}
+
+/* ── SECTIONS SHARED ── */
+.section-label{display:inline-block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:12px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,40px);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:14px}
+.section-sub{font-size:15px;color:var(--muted);line-height:1.7}
+
+/* ── WHY ── */
+.why-section{padding:90px 5%;background:var(--bg)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;margin-top:52px}
+.why-features{display:flex;flex-direction:column;gap:26px}
+.why-feature{display:flex;gap:16px;align-items:flex-start}
+.why-icon{width:44px;height:44px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-icon svg{width:20px;height:20px;fill:var(--gold)}
+.why-feature h3{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.why-feature p{font-size:13px;color:var(--muted);line-height:1.6}
+.why-panel{background:var(--navy);border-radius:16px;padding:36px;overflow:hidden}
+.why-panel-title{font-family:'Playfair Display',serif;color:var(--white);font-size:20px;font-weight:700;margin-bottom:24px}
+.compare-row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
+.compare-row:last-child{border-bottom:none}
+.compare-role{font-size:13px;color:rgba(255,255,255,0.6)}
+.compare-saving{font-size:22px;font-weight:700;color:var(--gold);font-family:'Playfair Display',serif}
+.compare-sub{font-size:11px;color:rgba(255,255,255,0.3)}
+.bar-wrap{width:100%;height:4px;background:rgba(255,255,255,0.1);border-radius:2px;margin-top:5px}
+.bar-fill{height:4px;background:var(--gold);border-radius:2px}
+
+/* ── SERVICES ── */
+.services-section{padding:90px 5%;background:var(--white)}
+.services-header{text-align:center;max-width:560px;margin:0 auto 48px}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+.service-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:28px 24px;transition:all 0.25s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height 0.3s}
+.service-card:hover{border-color:var(--navy);transform:translateY(-3px)}
+.service-card:hover::before{height:100%}
+.service-icon{width:44px;height:44px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.service-icon svg{width:20px;height:20px;fill:var(--gold)}
+.service-card h3{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.service-card p{font-size:13px;color:var(--muted);line-height:1.6}
+.service-tag{display:inline-block;background:rgba(244,168,35,0.12);color:#7a5200;border-radius:4px;padding:3px 10px;font-size:11px;font-weight:600;margin-top:14px}
+
+/* ── HOW IT WORKS ── */
+.how-section{padding:90px 5%;background:var(--navy);position:relative;overflow:hidden}
+.how-dots{position:absolute;inset:0;opacity:0.03;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:28px 28px}
+.how-header{text-align:center;margin-bottom:52px;position:relative;z-index:1}
+.how-header .section-title{color:var(--white)}
+.how-header .section-sub{color:rgba(255,255,255,0.5);max-width:480px;margin:0 auto}
+.how-steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:1}
+.how-steps::before{content:'';position:absolute;top:30px;left:12.5%;width:75%;height:1px;background:rgba(255,255,255,0.1)}
+.how-step{text-align:center;padding:0 16px;position:relative;z-index:1}
+.step-num{width:60px;height:60px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Playfair Display',serif;font-size:22px;font-weight:800;color:var(--navy)}
+.how-step h3{font-size:15px;font-weight:600;color:var(--white);margin-bottom:10px}
+.how-step p{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6}
+
+/* ── PRICING ── */
+.pricing-section{padding:90px 5%;background:var(--bg)}
+.pricing-header{text-align:center;max-width:520px;margin:0 auto 48px}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:920px;margin:0 auto}
+.pricing-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:34px 28px;position:relative}
+.pricing-card.featured{background:var(--navy);border-color:var(--navy);transform:scale(1.03)}
+.pricing-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-size:11px;font-weight:700;padding:5px 16px;border-radius:20px;white-space:nowrap}
+.pricing-plan{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px}
+.pricing-card.featured .pricing-plan{color:rgba(255,255,255,0.45)}
+.pricing-price{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.pricing-card.featured .pricing-price{color:var(--gold)}
+.pricing-period{font-size:13px;color:var(--muted);margin-bottom:22px}
+.pricing-card.featured .pricing-period{color:rgba(255,255,255,0.4)}
+.pricing-features{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:26px}
+.pricing-features li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--slate)}
+.pricing-card.featured .pricing-features li{color:rgba(255,255,255,0.72)}
+.check{width:18px;height:18px;background:rgba(45,156,91,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pricing-card.featured .check{background:rgba(244,168,35,0.2)}
+.check svg{width:10px;height:10px;fill:var(--green)}
+.pricing-card.featured .check svg{fill:var(--gold)}
+.pricing-btn{width:100%;padding:12px;border-radius:7px;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;border:1.5px solid var(--navy);background:transparent;color:var(--navy)}
+.pricing-btn:hover{background:var(--navy);color:var(--white)}
+.pricing-card.featured .pricing-btn{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.pricing-card.featured .pricing-btn:hover{background:var(--gold-light)}
+
+/* ── FAQ ── */
+.faq-section{padding:90px 5%;background:var(--white)}
+.faq-header{text-align:center;max-width:520px;margin:0 auto 48px}
+.faq-grid{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:var(--bg);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.faq-question{width:100%;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;background:transparent;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--navy);text-align:left;transition:background 0.2s}
+.faq-question:hover{background:rgba(10,35,66,0.03)}
+.faq-question.open{background:var(--navy);color:var(--white)}
+.faq-icon{width:22px;height:22px;border-radius:50%;background:rgba(244,168,35,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform 0.3s}
+.faq-question.open .faq-icon{background:rgba(244,168,35,0.25);transform:rotate(45deg)}
+.faq-icon svg{width:12px;height:12px;fill:var(--gold)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.3s}
+.faq-answer.open{max-height:200px;padding:0 22px 18px}
+.faq-answer p{font-size:14px;color:var(--muted);line-height:1.7}
+
+/* ── ABOUT ── */
+.about-section{padding:90px 5%;background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:48px}
+.about-text p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:16px}
+.about-cities{display:flex;flex-direction:column;gap:14px;margin-top:28px}
+.city-item{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--white);border:1px solid var(--border);border-radius:10px}
+.city-dot{width:10px;height:10px;background:var(--gold);border-radius:50%;flex-shrink:0}
+.city-name{font-size:14px;font-weight:600;color:var(--navy)}
+.city-desc{font-size:12px;color:var(--muted);margin-top:2px}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.about-stat{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center}
+.about-stat-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--navy)}
+.about-stat-label{font-size:13px;color:var(--muted);margin-top:4px}
+.about-stat-accent{width:32px;height:3px;background:var(--gold);border-radius:2px;margin:10px auto 0}
+
+/* ── CONTACT ── */
+.contact-section{padding:90px 5%;background:var(--navy);position:relative;overflow:hidden}
+.contact-dots{position:absolute;inset:0;opacity:0.03;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:28px 28px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;position:relative;z-index:1}
+.contact-info .section-title{color:var(--white)}
+.contact-info .section-sub{color:rgba(255,255,255,0.5);margin-bottom:36px}
+.contact-details{display:flex;flex-direction:column;gap:20px}
+.contact-detail{display:flex;align-items:flex-start;gap:14px}
+.contact-detail-icon{width:40px;height:40px;background:rgba(244,168,35,0.15);border:1px solid rgba(244,168,35,0.25);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-detail-icon svg{width:18px;height:18px;fill:var(--gold)}
+.contact-detail-label{font-size:11px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:3px}
+.contact-detail-value{font-size:14px;color:var(--white);font-weight:500}
+.calendly-btn{display:inline-flex;align-items:center;gap:10px;margin-top:32px;padding:13px 26px;background:var(--gold);border:none;border-radius:8px;font-size:14px;font-weight:600;color:var(--navy);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s}
+.calendly-btn:hover{background:var(--gold-light);transform:translateY(-1px)}
+.calendly-btn svg{width:16px;height:16px;fill:var(--navy)}
+
+/* ── FORM ── */
+.contact-form-wrap{background:var(--white);border-radius:16px;padding:36px}
+.contact-form-wrap h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.contact-form-wrap p{font-size:13px;color:var(--muted);margin-bottom:24px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.form-group label{font-size:12px;font-weight:600;color:var(--slate);text-transform:uppercase;letter-spacing:0.5px}
+.form-group input,.form-group select,.form-group textarea{padding:11px 14px;border:1.5px solid var(--border);border-radius:7px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg);transition:border-color 0.2s;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--navy)}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-submit{width:100%;padding:13px;background:var(--navy);border:none;border-radius:7px;font-size:15px;font-weight:600;color:var(--white);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;margin-top:4px}
+.form-submit:hover{background:var(--navy-light)}
+.form-submit:disabled{opacity:0.6;cursor:not-allowed}
+.form-success{display:none;text-align:center;padding:24px 0}
+.form-success-icon{width:52px;height:52px;background:rgba(45,156,91,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.form-success-icon svg{width:24px;height:24px;fill:var(--green)}
+.form-success h4{font-size:17px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.form-success p{font-size:13px;color:var(--muted)}
+.form-error-msg{font-size:12px;color:var(--red);margin-top:4px;display:none}
+
+/* ── CTA BANNER ── */
+.cta-banner{background:var(--gold);padding:70px 5%;text-align:center}
+.cta-banner h2{font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,42px);font-weight:800;color:var(--navy);margin-bottom:12px}
+.cta-banner p{font-size:16px;color:rgba(10,35,66,0.6);margin-bottom:30px;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-banner-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-dark-btn{padding:13px 34px;background:var(--navy);border:none;border-radius:6px;font-size:15px;font-weight:600;color:var(--white);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s}
+.cta-dark-btn:hover{background:var(--navy-light)}
+.cta-ghost-btn{padding:13px 34px;background:transparent;border:2px solid var(--navy);border-radius:6px;font-size:15px;font-weight:600;color:var(--navy);cursor:pointer;font-family:'DM Sans',sans-serif}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:52px 5% 28px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:12px}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,0.38);line-height:1.7;max-width:230px}
+.footer-col h4{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.28);margin-bottom:14px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.5);transition:color 0.2s}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.28)}
+.footer-legal{display:flex;gap:20px}
+.footer-legal a{font-size:12px;color:rgba(255,255,255,0.28);transition:color 0.2s}
+.footer-legal a:hover{color:rgba(255,255,255,0.6)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .nav-links,.btn-primary-nav{display:none}
+  .nav-hamburger{display:flex}
+  .hero{padding:60px 5%;min-height:auto}
+  .hero-visual{display:none}
+  .why-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .how-steps{grid-template-columns:1fr 1fr;gap:32px}
+  .how-steps::before{display:none}
+  .pricing-grid{grid-template-columns:1fr}
+  .pricing-card.featured{transform:none}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .hero-stats{gap:24px}
+  .footer-top{grid-template-columns:1fr}
+  .about-stats{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <div class="nav-logo-mark"><span>SA</span></div>
+    <span class="nav-brand">OutsourceSA</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="btn-primary-nav" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in Touch</button>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMenu()">Home</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#pricing" onclick="closeMenu()">Pricing</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero" id="home">
+  <div class="hero-accent-bar"></div>
+  <canvas id="particle-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span>Trusted South Africa Outsourcing Platform</span>
+    </div>
+    <h1>Outsource Smarter.<br/>Build Your Team in<br/><em>South Africa.</em></h1>
+    <p>Access highly skilled English-speaking professionals at up to 70% lower cost than U.S. hiring. No compromise on quality.</p>
+    <div class="hero-cta">
+      <button class="hero-btn-main" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start Hiring Today</button>
+      <button class="hero-btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a Discovery Call</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-num">70%</div><div class="stat-label">Cost Savings</div></div>
+      <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">Professionals</div></div>
+      <div class="stat-item"><div class="stat-num">200+</div><div class="stat-label">U.S. Clients</div></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="hero-card-label">Avg. Monthly Savings</div>
+      <div class="hero-card-value">$3,800</div>
+      <div class="hero-card-sub">Per hire vs. U.S. market</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-label">Time to Hire</div>
+      <div class="hero-card-value">7–14 Days</div>
+      <div class="hero-card-sub gold">Fast, vetted matching</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-label">English Proficiency</div>
+      <div class="hero-card-value">Fluent</div>
+      <div class="hero-card-sub">1st language for business</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LOGOS ── -->
+<div class="logos-strip">
+  <div class="logos-inner">
+    <span class="logos-label">Trusted by companies across</span>
+    <div class="logo-pill">Technology</div>
+    <div class="logo-pill">Finance</div>
+    <div class="logo-pill">Healthcare</div>
+    <div class="logo-pill">E-commerce</div>
+    <div class="logo-pill">Legal Services</div>
+    <div class="logo-pill">Real Estate</div>
+  </div>
+</div>
+
+<!-- ── WHY ── -->
+<section class="why-section" id="about-intro">
+  <span class="section-label">Why South Africa</span>
+  <h2 class="section-title">The Smart Choice for U.S. Companies</h2>
+  <p class="section-sub">South Africa combines world-class talent, modern infrastructure, and unmatched cost efficiency.</p>
+  <div class="why-grid">
+    <div class="why-features">
+      <div class="why-feature">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+        <div><h3>Significant Cost Savings</h3><p>Save 50–70% on staffing costs without sacrificing quality or professional standards.</p></div>
+      </div>
+      <div class="why-feature">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V17h2v-4.82l2 1.09v4.73h2v-4.73l2-1.09V17h2v-5.82L23 9 12 3z"/></svg></div>
+        <div><h3>Highly Educated Workforce</h3><p>World-class graduates in technology, finance, law, and business produced annually.</p></div>
+      </div>
+      <div class="why-feature">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.9 4.33 3.56zm-6.92-3.96c.83 1.2 1.48 2.53 1.9 3.96h-3.8c.42-1.43 1.07-2.76 1.9-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.9-3.96h3.8c-.42 1.43-1.07 2.76-1.9 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.66-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg></div>
+        <div><h3>Compatible Time Zones</h3><p>Overlaps with U.S. Eastern hours — real-time collaboration made seamless.</p></div>
+      </div>
+      <div class="why-feature">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></div>
+        <div><h3>Fluent English Communication</h3><p>English is the primary language of business and education across South Africa.</p></div>
+      </div>
+    </div>
+    <div class="why-panel">
+      <div class="why-panel-title">Average Cost Comparison</div>
+      <div class="compare-row">
+        <div><div class="compare-role">Customer Support Agent</div><div class="bar-wrap"><div class="bar-fill" style="width:73%"></div></div></div>
+        <div style="text-align:right"><div class="compare-saving">73%</div><div class="compare-sub">saved</div></div>
+      </div>
+      <div class="compare-row">
+        <div><div class="compare-role">Virtual Assistant</div><div class="bar-wrap"><div class="bar-fill" style="width:70%"></div></div></div>
+        <div style="text-align:right"><div class="compare-saving">70%</div><div class="compare-sub">saved</div></div>
+      </div>
+      <div class="compare-row">
+        <div><div class="compare-role">Software Developer</div><div class="bar-wrap"><div class="bar-fill" style="width:68%"></div></div></div>
+        <div style="text-align:right"><div class="compare-saving">68%</div><div class="compare-sub">saved</div></div>
+      </div>
+      <div class="compare-row">
+        <div><div class="compare-role">Bookkeeper</div><div class="bar-wrap"><div class="bar-fill" style="width:66%"></div></div></div>
+        <div style="text-align:right"><div class="compare-saving">66%</div><div class="compare-sub">saved</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section class="services-section" id="services">
+  <div class="services-header">
+    <span class="section-label">What We Offer</span>
+    <h2 class="section-title">Services You Can Outsource</h2>
+    <p class="section-sub">From customer support to software development — we connect you with the right talent.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></div>
+      <h3>Customer Support</h3>
+      <p>24/7 call center teams trained to international service standards. Phone, email, and live chat.</p>
+      <span class="service-tag">Most Popular</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg></div>
+      <h3>Virtual Assistants</h3>
+      <p>Inbox management, scheduling, CRM updates, research, and administrative support.</p>
+      <span class="service-tag">High Demand</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg></div>
+      <h3>Software Development</h3>
+      <p>Skilled developers for web apps, SaaS products, mobile, APIs, and cloud architecture.</p>
+      <span class="service-tag">Fast Placement</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+      <h3>Finance & Accounting</h3>
+      <p>Bookkeeping, payroll support, financial reporting, and accounts management.</p>
+      <span class="service-tag">Certified Pros</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+      <h3>Marketing</h3>
+      <p>Social media management, graphic design, SEO, content writing, and campaign support.</p>
+      <span class="service-tag">Creative Talent</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how-section">
+  <div class="how-dots"></div>
+  <div class="how-header">
+    <span class="section-label">The Process</span>
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub">From first enquiry to your first billable hour in as little as 14 days.</p>
+  </div>
+  <div class="how-steps">
+    <div class="how-step"><div class="step-num">1</div><h3>Tell Us Your Needs</h3><p>Fill in our enquiry form with the role, skills, and hours you need covered.</p></div>
+    <div class="how-step"><div class="step-num">2</div><h3>We Match You</h3><p>Our team hand-picks vetted South African professionals suited to your requirements.</p></div>
+    <div class="how-step"><div class="step-num">3</div><h3>Meet the Talent</h3><p>Interview candidates, review their profiles, and choose the best fit.</p></div>
+    <div class="how-step"><div class="step-num">4</div><h3>Start Working</h3><p>Your new hire plugs directly into your workflow, tools, and team culture.</p></div>
+  </div>
+</section>
+
+<!-- ── PRICING ── -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-header">
+    <span class="section-label">Pricing</span>
+    <h2 class="section-title">Simple, Transparent Pricing</h2>
+    <p class="section-sub" style="color:var(--muted)">No hidden fees. No lock-in contracts. Scale on your terms.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-plan">Starter</div>
+      <div class="pricing-price">$499</div>
+      <div class="pricing-period">/ month per hire</div>
+      <ul class="pricing-features">
+        <li><div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>1–3 professionals</li>
+        <li><div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>Candidate sourcing</li>
+        <li><div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>Interview assistance</li>
+        <li><div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>Onboarding support</li>
+      </ul>
+      <button class="pricing-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+    </div>
+    <div class="pricing-card featured">
+      <div class="pricing-badge">Most Popular</div>
+      <div class="pricing-plan">Growth</div>
+      <div class="pricing-price">Custom</div>
+      <div class="pricing-period">Tailored to your team size</div>
+      <ul class="pricing-features">
+        <li><div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>4–15 hires</li>
+        <li><div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>Dedicated account manager</li>
+        <li><div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>Payroll support</li>
+        <li><div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>HR assistance</li>
+      </ul>
+      <button class="pricing-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Talk to an Expert</button>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-plan">Enterprise</div>
+      <div class="pricing-price">Custom</div>
+      <div class="pricing-period">Enterprise pricing</div>
+      <ul class="pricing-features">
+        <li><div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>15+ hires</li>
+        <li><div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>Full HR & compliance</li>
+        <li><div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>Team management support</li>
+        <li><div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>Dedicated recruitment team</li>
+      </ul>
+      <button class="pricing-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Sales</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about-section" id="about">
+  <span class="section-label">About Us</span>
+  <h2 class="section-title">Why We Built OutsourceSA</h2>
+  <p class="section-sub">We saw a gap — brilliant South African professionals ready to work, and U.S. companies struggling with rising staffing costs. We built the bridge.</p>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>OutsourceSA helps American companies build high-performing remote teams in South Africa. We handle the sourcing, vetting, and matching — so you can focus on running your business.</p>
+      <p>Our mission is simple: make global talent accessible, affordable, and easy to manage. South Africa's combination of strong education, business experience, and competitive costs makes it one of the world's most exciting outsourcing destinations.</p>
+      <p>Major cities like Cape Town, Johannesburg, and Durban host thriving technology and outsourcing sectors with deep talent pools and world-class infrastructure.</p>
+      <div class="about-cities">
+        <div class="city-item"><div class="city-dot"></div><div><div class="city-name">Cape Town</div><div class="city-desc">Technology hub & creative talent</div></div></div>
+        <div class="city-item"><div class="city-dot"></div><div><div class="city-name">Johannesburg</div><div class="city-desc">Finance, business & corporate services</div></div></div>
+        <div class="city-item"><div class="city-dot"></div><div><div class="city-name">Durban</div><div class="city-desc">BPO & customer service centres</div></div></div>
+      </div>
+    </div>
+    <div class="about-stats">
+      <div class="about-stat"><div class="about-stat-num">70%</div><div class="about-stat-label">Average Cost Saving</div><div class="about-stat-accent"></div></div>
+      <div class="about-stat"><div class="about-stat-num">500+</div><div class="about-stat-label">Vetted Professionals</div><div class="about-stat-accent"></div></div>
+      <div class="about-stat"><div class="about-stat-num">200+</div><div class="about-stat-label">U.S. Companies Served</div><div class="about-stat-accent"></div></div>
+      <div class="about-stat"><div class="about-stat-num">14</div><div class="about-stat-label">Days Avg. Time to Hire</div><div class="about-stat-accent"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq-section" id="faq">
+  <div class="faq-header">
+    <span class="section-label">FAQ</span>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-sub">Everything you need to know before getting started.</p>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Why outsource to South Africa?<div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div></button>
+      <div class="faq-answer"><p>South Africa offers a highly skilled workforce, strong English proficiency, and competitive labour costs compared to the United States — typically 50–70% lower for equivalent roles.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">How much can my company save?<div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div></button>
+      <div class="faq-answer"><p>Most U.S. companies save between 50% and 70% on staffing costs when hiring South African professionals. A customer support agent that costs $45,000/year in the U.S. can be hired for approximately $12,000/year in South Africa.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Is communication easy?<div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div></button>
+      <div class="faq-answer"><p>Yes. English is the primary language of business and education throughout South Africa. South African professionals communicate fluently and clearly with American clients and teams.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">What about data security and compliance?<div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div></button>
+      <div class="faq-answer"><p>South Africa has strong data protection laws including the Protection of Personal Information Act (POPIA), which regulates how companies handle personal data — comparable to GDPR in Europe.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Can South African staff work U.S. hours?<div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div></button>
+      <div class="faq-answer"><p>Yes. Many South African professionals work U.S. time zones. Night shifts and U.S.-aligned schedules are very common in the outsourcing industry, and talent is accustomed to it.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">How long does hiring take?<div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div></button>
+      <div class="faq-answer"><p>Most placements are completed within 7–14 days. We pre-screen and vet candidates so you only speak with professionals who are a strong match for your requirements.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ── -->
+<section class="cta-banner">
+  <h2>Scale Your Team Without Scaling Your Costs.</h2>
+  <p>Start building your South African team today and save up to 70% on every hire.</p>
+  <div class="cta-banner-btns">
+    <button class="cta-dark-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Send an Enquiry</button>
+    <button class="cta-ghost-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a Discovery Call</button>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="contact-section" id="contact">
+  <div class="contact-dots"></div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <span class="section-label">Get in Touch</span>
+      <h2 class="section-title">Let's Talk About Your Hiring Needs</h2>
+      <p class="section-sub">Fill in the form and we'll get back to you within 24 hours. Or book a free discovery call directly.</p>
+      <div class="contact-details">
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+          <div><div class="contact-detail-label">Email</div><div class="contact-detail-value">hello@outsourcesa.com</div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+          <div><div class="contact-detail-label">Phone</div><div class="contact-detail-value">+1 (800) 000-0000</div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+          <div><div class="contact-detail-label">Based in</div><div class="contact-detail-value">Cape Town & Johannesburg, South Africa</div></div>
+        </div>
+      </div>
+      <button class="calendly-btn" onclick="window.open('https://calendly.com/your-link','_blank')">
+        <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+        Book a Free Discovery Call
+      </button>
+    </div>
+    <div class="contact-form-wrap">
+      <h3>Send an Enquiry</h3>
+      <p>Tell us what you need and we'll be in touch within 24 hours.</p>
+      <div id="formContent">
+        <div class="form-row">
+          <div class="form-group"><label>First Name *</label><input type="text" id="firstName" placeholder="John"/><span class="form-error-msg" id="err-firstName">Please enter your first name</span></div>
+          <div class="form-group"><label>Last Name *</label><input type="text" id="lastName" placeholder="Smith"/><span class="form-error-msg" id="err-lastName">Please enter your last name</span></div>
+        </div>
+        <div class="form-group"><label>Email Address *</label><input type="email" id="email" placeholder="john@company.com"/><span class="form-error-msg" id="err-email">Please enter a valid email</span></div>
+        <div class="form-group"><label>Company Name</label><input type="text" id="company" placeholder="Acme Inc."/></div>
+        <div class="form-group">
+          <label>Service Needed</label>
+          <select id="service">
+            <option value="">Select a service...</option>
+            <option>Customer Support</option>
+            <option>Virtual Assistant</option>
+            <option>Software Development</option>
+            <option>Finance & Accounting</option>
+            <option>Marketing</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message *</label><textarea id="message" placeholder="Tell us about the role you need filled, how many people, budget range, etc."></textarea><span class="form-error-msg" id="err-message">Please enter a message</span></div>
+        <button class="form-submit" id="submitBtn" onclick="submitForm()">Send Enquiry</button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+        <h4>Enquiry Sent!</h4>
+        <p>Thank you — we'll be in touch within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">OutsourceSA</div>
+      <p class="footer-tagline">Connecting U.S. companies with world-class South African professionals.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Customer Support</a></li>
+        <li><a href="#services">Virtual Assistants</a></li>
+        <li><a href="#services">Software Dev</a></li>
+        <li><a href="#services">Finance</a></li>
+        <li><a href="#services">Marketing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">How It Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#contact">Send Enquiry</a></li>
+        <li><a href="mailto:hello@outsourcesa.com">hello@outsourcesa.com</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Twitter / X</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 OutsourceSA. All rights reserved.</span>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">POPIA Compliance</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── PARTICLES ── */
+const canvas = document.getElementById('particle-canvas');
+const ctx = canvas.getContext('2d');
+const hero = canvas.parentElement;
+function resizeCanvas(){canvas.width=hero.offsetWidth;canvas.height=hero.offsetHeight}
+resizeCanvas();
+window.addEventListener('resize',resizeCanvas);
+const particles = Array.from({length:28},()=>{
+  const r=[3,4][Math.floor(Math.random()*2)];
+  const ox=Math.random()*window.innerWidth;
+  const oy=Math.random()*600;
+  return{ox,oy,x:ox,y:oy,r,alpha:0.08+Math.random()*0.18,vx:(Math.random()-0.5)*0.35,vy:(Math.random()-0.5)*0.35,drift:Math.random()*Math.PI*2,ds:0.003+Math.random()*0.005,dr:18+Math.random()*32,pulse:Math.random()*Math.PI*2,ps:0.01+Math.random()*0.015};
+});
+function animateParticles(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>{
+    p.drift+=p.ds;p.pulse+=p.ps;
+    p.x=p.ox+Math.cos(p.drift)*p.dr;
+    p.y=p.oy+Math.sin(p.drift)*p.dr;
+    p.ox+=p.vx;p.oy+=p.vy;
+    if(p.ox<-60)p.ox=canvas.width+40;
+    if(p.ox>canvas.width+60)p.ox=-40;
+    if(p.oy<-60)p.oy=canvas.height+40;
+    if(p.oy>canvas.height+60)p.oy=-40;
+    const a=p.alpha+Math.sin(p.pulse)*0.05;
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(244,168,35,${Math.max(0,a)})`;ctx.fill();
+  });
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+/* ── NAV ACTIVE ── */
+const sections=document.querySelectorAll('section[id],div[id]');
+const navLinks=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-100)current=s.id});
+  navLinks.forEach(a=>{a.classList.remove('active');if(a.getAttribute('href')==='#'+current)a.classList.add('active')});
+});
+
+/* ── MOBILE MENU ── */
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+
+/* ── FAQ ── */
+function toggleFaq(btn){
+  const answer=btn.nextElementSibling;
+  const isOpen=btn.classList.contains('open');
+  document.querySelectorAll('.faq-question.open').forEach(q=>{q.classList.remove('open');q.nextElementSibling.classList.remove('open')});
+  if(!isOpen){btn.classList.add('open');answer.classList.add('open')}
+}
+
+/* ── FORM ── */
+function submitForm(){
+  let valid=true;
+  const fields=[{id:'firstName',errId:'err-firstName'},{id:'lastName',errId:'err-lastName'},{id:'message',errId:'err-message'}];
+  fields.forEach(f=>{
+    const el=document.getElementById(f.id);
+    const err=document.getElementById(f.errId);
+    if(!el.value.trim()){err.style.display='block';el.style.borderColor='var(--red)';valid=false}
+    else{err.style.display='none';el.style.borderColor='var(--border)'}
+  });
+  const emailEl=document.getElementById('email');
+  const emailErr=document.getElementById('err-email');
+  const emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value);
+  if(!emailOk){emailErr.style.display='block';emailEl.style.borderColor='var(--red)';valid=false}
+  else{emailErr.style.display='none';emailEl.style.borderColor='var(--border)'}
+  if(!valid)return;
+  const btn=document.getElementById('submitBtn');
+  btn.textContent='Sending...';btn.disabled=true;
+  const payload={
+    firstName:document.getElementById('firstName').value,
+    lastName:document.getElementById('lastName').value,
+    email:emailEl.value,
+    company:document.getElementById('company').value,
+    service:document.getElementById('service').value,
+    message:document.getElementById('message').value
+  };
+  /* Replace with your actual API URL */
+  fetch('https://your-api.com/api/enquiry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+    .then(r=>{
+      document.getElementById('formContent').style.display='none';
+      document.getElementById('formSuccess').style.display='block';
+    })
+    .catch(()=>{
+      /* For demo: show success anyway */
+      document.getElementById('formContent').style.display='none';
+      document.getElementById('formSuccess').style.display='block';
+    });
+}
+</script>
+</body>
+</html>

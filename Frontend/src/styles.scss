@@ -1,0 +1,18 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #0A2342;
+  --navy-light: #0f2f5a;
+  --gold: #F4A823;
+  --gold-light: #f7bc55;
+  --slate: #4A5568;
+  --bg: #F7F8FA;
+  --white: #FFFFFF;
+  --text: #1A202C;
+  --muted: #718096;
+  --green: #2D9C5B;
+  --border: #E2E8F0;
+  --red: #E53E3E;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
