@@ -6,6 +6,25 @@
   position: relative;
   overflow: hidden;
   padding: 80px 5%;
+  // South African flag as background - high quality, with overlay for readability
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1619428752198-44bc70f4b27f?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+    z-index: 0;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10, 35, 66, 0.92) 0%, rgba(10, 35, 66, 0.75) 100%);
+    z-index: 0;
+  }
 }
 .hero-accent-bar {
   position: absolute;
@@ -105,12 +124,26 @@
   gap: 14px;
   z-index: 3;
 }
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .hero-card {
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
   padding: 16px 20px;
   width: 230px;
+  animation: slideInFromRight 0.6s ease-out both;
+  &:nth-child(1) { animation-delay: 0.2s; }
+  &:nth-child(2) { animation-delay: 0.35s; }
+  &:nth-child(3) { animation-delay: 0.5s; }
 }
 .hero-card-label { font-size: 11px; color: rgba(255, 255, 255, 0.45); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
 .hero-card-value { font-size: 22px; font-weight: 600; color: var(--white); }

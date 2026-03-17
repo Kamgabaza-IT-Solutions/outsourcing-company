@@ -2,6 +2,17 @@
   background: var(--white);
   padding: 22px 5%;
   border-bottom: 1px solid var(--border);
+  position: relative;
+  // SA flag colors as thin accent line
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #007749 0%, #FFB81C 25%, #E03C31 50%, #002395 75%, #007749 100%);
+  }
 }
 .logos-inner { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .logos-label {

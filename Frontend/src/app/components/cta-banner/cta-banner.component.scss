@@ -1,4 +1,22 @@
-.cta-banner { background: var(--gold); padding: 70px 5%; text-align: center; }
+.cta-banner {
+  background: var(--gold);
+  padding: 70px 5%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  // SA flag texture - very subtle overlay
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1679480129388-1a5c054bac10?w=1920&q=60');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    z-index: 0;
+  }
+  > * { position: relative; z-index: 1; }
+}
 .cta-banner h2 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(24px, 3.5vw, 42px);
