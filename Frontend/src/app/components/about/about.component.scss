@@ -1,6 +1,28 @@
-.about-section { padding: 90px 5%; background: var(--bg); }
+.about-section {
+  padding: 90px 5%;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1619428752198-44bc70f4b27f?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    animation: flagFlutter 5s ease-in-out infinite;
+    z-index: 0;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(247, 248, 250, 0.55);
+    z-index: 0;
+  }
+  > * { position: relative; z-index: 1; }
+}
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 48px; }
-.about-text p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+.about-text p { font-size: 15px; color: var(--text); font-weight: 500; line-height: 1.8; margin-bottom: 16px; }
 .about-cities { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
 .city-item {
   display: flex;

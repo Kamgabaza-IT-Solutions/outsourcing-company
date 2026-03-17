@@ -3,6 +3,17 @@
   background: var(--navy);
   position: relative;
   overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1619428752198-44bc70f4b27f?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    animation: flagFlutter 5s ease-in-out infinite;
+    z-index: 0;
+  }
 }
 .contact-dots {
   position: absolute;
