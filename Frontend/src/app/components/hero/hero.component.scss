@@ -17,6 +17,7 @@
     background-repeat: no-repeat;
     opacity: 0.25;
     z-index: 0;
+    animation: flagFlutter 5s ease-in-out infinite;
   }
   &::after {
     content: '';

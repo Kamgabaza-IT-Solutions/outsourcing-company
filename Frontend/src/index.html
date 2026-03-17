@@ -10,6 +10,15 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  <!-- Hidden form for Netlify Forms detection (required for SPAs) -->
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="contact" />
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="company" />
+    <input type="text" name="service" />
+    <textarea name="message"></textarea>
+  </form>
   <app-root></app-root>
 </body>
 </html>

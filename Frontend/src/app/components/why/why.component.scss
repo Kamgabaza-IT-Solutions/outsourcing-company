@@ -15,7 +15,7 @@
   line-height: 1.2;
   margin-bottom: 14px;
 }
-.section-sub { font-size: 15px; color: var(--muted); line-height: 1.7; }
+.section-sub { font-size: 15px; color: var(--slate); line-height: 1.7; font-weight: 500; }
 .why-section {
   padding: 90px 5%;
   position: relative;
@@ -28,8 +28,8 @@
     background-image: url('https://images.unsplash.com/photo-1619428752198-44bc70f4b27f?w=1920&q=80');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     z-index: 0;
+    animation: flagFlutter 5s ease-in-out infinite;
   }
   &::after {
     content: '';
@@ -55,7 +55,7 @@
 }
 .why-icon svg { width: 20px; height: 20px; fill: var(--gold); }
 .why-feature h3 { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
-.why-feature p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.why-feature p { font-size: 13px; color: var(--slate); line-height: 1.6; font-weight: 500; }
 .why-panel {
   background: var(--navy);
   border-radius: 16px;

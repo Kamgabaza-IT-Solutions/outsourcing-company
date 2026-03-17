@@ -13,6 +13,7 @@
     background-position: center;
     opacity: 0.2;
     z-index: 0;
+    animation: flagFlutter 5s ease-in-out infinite;
   }
   &::after {
     content: '';
