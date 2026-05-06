@@ -50,7 +50,6 @@
             "assets": [
               "src/favicon.png",
               "src/favicon.ico",
-              "src/favicon.svg",
               "src/assets"
             ],
             "styles": [
@@ -118,7 +117,6 @@
             "assets": [
               "src/favicon.png",
               "src/favicon.ico",
-              "src/favicon.svg",
               "src/assets"
             ],
             "styles": [

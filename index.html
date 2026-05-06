@@ -5,9 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>OutsourceSA — Hire World-Class South African Talent</title>
 <meta name="description" content="Access highly skilled English-speaking professionals at up to 70% lower cost than U.S. hiring. Build your remote team in South Africa today."/>
-<link rel="icon" type="image/png" href="/favicon.png?v=3"/>
+<link rel="icon" type="image/png" href="/favicon.png?v=4"/>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -32,9 +31,7 @@ a{text-decoration:none;color:inherit}
 /* ── NAVBAR ── */
 nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 5%;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:68px}
 .nav-logo{display:flex;align-items:center;gap:10px}
-.nav-logo-mark{width:34px;height:34px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center}
-.nav-logo-mark span{color:var(--gold);font-family:'Playfair Display',serif;font-weight:800;font-size:16px}
-.nav-brand{font-family:'Playfair Display',serif;font-weight:700;font-size:17px;color:var(--navy)}
+.nav-logo-image{height:42px;width:auto;display:block}
 .nav-links{display:flex;gap:32px;list-style:none}
 .nav-links a{font-size:14px;font-weight:500;color:var(--slate);transition:color 0.2s}
 .nav-links a:hover,.nav-links a.active{color:var(--navy)}
@@ -235,7 +232,8 @@ nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 5%;p
 /* ── FOOTER ── */
 footer{background:var(--navy);padding:52px 5% 28px}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
-.footer-brand{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:12px}
+.footer-brand{display:inline-block;margin-bottom:12px}
+.footer-brand-image{display:block;width:190px;max-width:100%;height:auto}
 .footer-tagline{font-size:13px;color:rgba(255,255,255,0.38);line-height:1.7;max-width:230px}
 .footer-col h4{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.28);margin-bottom:14px}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
@@ -251,6 +249,7 @@ footer{background:var(--navy);padding:52px 5% 28px}
 @media(max-width:900px){
   .nav-links,.btn-primary-nav{display:none}
   .nav-hamburger{display:flex}
+  .nav-logo-image{height:36px}
   .hero{padding:60px 5%;min-height:auto}
   .hero-visual{display:none}
   .why-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
@@ -264,6 +263,7 @@ footer{background:var(--navy);padding:52px 5% 28px}
 @media(max-width:560px){
   .hero-stats{gap:24px}
   .footer-top{grid-template-columns:1fr}
+  .footer-brand-image{width:170px}
   .about-stats{grid-template-columns:1fr 1fr}
 }
 </style>
@@ -273,8 +273,7 @@ footer{background:var(--navy);padding:52px 5% 28px}
 <!-- ── NAVBAR ── -->
 <nav id="navbar">
   <div class="nav-logo">
-    <div class="nav-logo-mark"><span>SA</span></div>
-    <span class="nav-brand">OutsourceSA</span>
+    <img class="nav-logo-image" src="/logo.jpeg" alt="OutsourceSA logo"/>
   </div>
   <ul class="nav-links">
     <li><a href="#home" class="active">Home</a></li>
@@ -637,7 +636,9 @@ footer{background:var(--navy);padding:52px 5% 28px}
 <footer>
   <div class="footer-top">
     <div>
-      <div class="footer-brand">OutsourceSA</div>
+      <a href="#home" class="footer-brand" aria-label="OutsourceSA home">
+        <img class="footer-brand-image" src="/logo.jpeg" alt="OutsourceSA logo"/>
+      </a>
       <p class="footer-tagline">Connecting U.S. companies with world-class South African professionals.</p>
     </div>
     <div class="footer-col">
@@ -774,3 +775,4 @@ function submitForm(){
 </script>
 </body>
 </html>
+
